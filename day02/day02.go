@@ -56,6 +56,10 @@ func Driver() {
 
 	// The next part requires a bit of brute forcing. We need to determine
 	// which noun and verb ends with the output
+	// If you were more clever than me - you could do a binary search on the outputs.
+	// Basically, start at i=50, j=50 and continue getting closer to the target
+	// each iteration. This is because a map of the values produced will inclusively
+	// be larger. I.e. for i, j in nouns, if i > j then res with i will be bigger.
 	for i := 0; i < 100; i++ {
 		for j := 0; j < 100; j++ {
 			buffer := make([]int, len(initialArray))
