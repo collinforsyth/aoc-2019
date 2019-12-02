@@ -3,6 +3,7 @@ package cmd
 import (
 	"fmt"
 	"github.com/collinforsyth/aoc-2019/day01"
+	"github.com/collinforsyth/aoc-2019/day02"
 	"github.com/spf13/cobra"
 	"os"
 )
@@ -19,10 +20,17 @@ var (
 			day01.Driver()
 		},
 	}
+	day02Cmd = &cobra.Command{
+		Use: "day02",
+		Run: func(cmd *cobra.Command, args []string) {
+			day02.Driver()
+		},
+	}
 )
 
 func init() {
 	rootCmd.AddCommand(day01Cmd)
+	rootCmd.AddCommand(day02Cmd)
 }
 
 func Execute() {
