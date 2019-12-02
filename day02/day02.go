@@ -60,6 +60,14 @@ func Driver() {
 	// Basically, start at i=50, j=50 and continue getting closer to the target
 	// each iteration. This is because a map of the values produced will inclusively
 	// be larger. I.e. for i, j in nouns, if i > j then res with i will be bigger.
+
+	// allResults should give you an idea on how to implement a binary search on the
+	// results if you want. I can't be bothered.
+	allResults := make([][]int, 100)
+	for i := range allResults {
+		allResults[i] = make([]int, 100)
+	}
+
 	for i := 0; i < 100; i++ {
 		for j := 0; j < 100; j++ {
 			buffer := make([]int, len(initialArray))
@@ -69,6 +77,7 @@ func Driver() {
 			if res[0] == 19690720 {
 				fmt.Printf("Part 2: Res: %d Noun=%d, Verb=%d, 100 * Noun + Verb= %d\n", res[0], i, j, 100*i+j)
 			}
+			allResults[i][j] = res[0]
 		}
 	}
 
