@@ -5,6 +5,7 @@ import (
 	"github.com/collinforsyth/aoc-2019/day01"
 	"github.com/collinforsyth/aoc-2019/day02"
 	"github.com/collinforsyth/aoc-2019/day03"
+	"github.com/collinforsyth/aoc-2019/day04"
 	"github.com/spf13/cobra"
 	"os"
 )
@@ -33,12 +34,19 @@ var (
 			day03.Driver()
 		},
 	}
+	day04Cmd = &cobra.Command{
+		Use: "day04",
+		Run: func(cmd *cobra.Command, args []string) {
+			day04.Driver()
+		},
+	}
 )
 
 func init() {
 	rootCmd.AddCommand(day01Cmd)
 	rootCmd.AddCommand(day02Cmd)
 	rootCmd.AddCommand(day03Cmd)
+	rootCmd.AddCommand(day04Cmd)
 }
 
 func Execute() {
